@@ -77,9 +77,7 @@ router.patch("/updateuser/:id", async (req, res) => {
     try {
         const { id } = req.params;
 
-        const updateduser = await users.findByIdAndUpdate(id, req.body, {
-            new: true
-        })
+        const updateduser = await users.findByIdAndUpdate(id, req.body, { new : true })
 
         console.log(updateduser);
         res.status(201).json(updateduser);
